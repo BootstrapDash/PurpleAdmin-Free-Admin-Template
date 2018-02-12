@@ -33,6 +33,7 @@
     + Demo styles
     + Authentication
   * Components
+    + Banners
     + Buttons
     + Cards
     + Checkboxes and Radios
@@ -13616,6 +13617,19 @@ input:focus {
     .sidebar .sidebar-progress .progress {
       max-width: 160px;
       margin-bottom: 13px; }
+  .sidebar .upgrade-button {
+    padding: 20px 10px 10px 10px; }
+    .sidebar .upgrade-button .purchase-button {
+      background-color: rgba(172, 50, 228, 0.9);
+      background-image: -owg-linear-gradient(to left, rgba(172, 50, 228, 0.9), rgba(121, 24, 242, 0.9) 49%, rgba(72, 1, 255, 0.9));
+      background-image: -webkit-linear-gradient(to left, rgba(172, 50, 228, 0.9), rgba(121, 24, 242, 0.9) 49%, rgba(72, 1, 255, 0.9));
+      background-image: -moz-linear-gradient(to left, rgba(172, 50, 228, 0.9), rgba(121, 24, 242, 0.9) 49%, rgba(72, 1, 255, 0.9));
+      background-image: -o-linear-gradient(to left, rgba(172, 50, 228, 0.9), rgba(121, 24, 242, 0.9) 49%, rgba(72, 1, 255, 0.9));
+      background-image: linear-gradient(to left, rgba(172, 50, 228, 0.9), rgba(121, 24, 242, 0.9) 49%, rgba(72, 1, 255, 0.9));
+      color: #ffffff;
+      border: none;
+      line-height: 1;
+      vertical-align: middle; }
 
 .sidebar-light {
   background: #ffffff; }
@@ -14158,7 +14172,7 @@ pre {
   padding-top: 59px; }
 
 /* Utilities */
-.grid-margin {
+.grid-margin, .purchace-popup > div {
   margin-bottom: 1.875rem; }
 
 @media (min-width: 576px) {
@@ -14806,6 +14820,48 @@ pre {
 .badge-gradient-danger {
   background: linear-gradient(to right, rgba(240, 147, 251, 0.9), rgba(245, 87, 108, 0.9));
   color: #ffffff; }
+
+/* Banners */
+.purchace-popup > div > span {
+  background: rgba(228, 228, 228, 0.46);
+  padding: 15px 20px;
+  border-radius: 3px; }
+  .purchace-popup > div > span .btn {
+    margin-right: 20px;
+    font-weight: 500;
+    color: #ffffff;
+    border-radius: 5px;
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    -o-transition-duration: 0.2s;
+    transition-duration: 0.2s; }
+    .purchace-popup > div > span .btn.download-button {
+      background: rgba(228, 228, 228, 0.2);
+      color: #b1b1b1;
+      border: 2px solid #cbcbcb; }
+    .purchace-popup > div > span .btn.purchase-button {
+      background-color: rgba(172, 50, 228, 0.9);
+      background-image: -owg-linear-gradient(to left, rgba(172, 50, 228, 0.9), rgba(121, 24, 242, 0.9) 49%, rgba(72, 1, 255, 0.9));
+      background-image: -webkit-linear-gradient(to left, rgba(172, 50, 228, 0.9), rgba(121, 24, 242, 0.9) 49%, rgba(72, 1, 255, 0.9));
+      background-image: -moz-linear-gradient(to left, rgba(172, 50, 228, 0.9), rgba(121, 24, 242, 0.9) 49%, rgba(72, 1, 255, 0.9));
+      background-image: -o-linear-gradient(to left, rgba(172, 50, 228, 0.9), rgba(121, 24, 242, 0.9) 49%, rgba(72, 1, 255, 0.9));
+      background-image: linear-gradient(to left, rgba(172, 50, 228, 0.9), rgba(121, 24, 242, 0.9) 49%, rgba(72, 1, 255, 0.9));
+      color: #ffffff;
+      border: none;
+      line-height: 1;
+      vertical-align: middle; }
+  .purchace-popup > div > span p {
+    margin-bottom: auto;
+    margin-top: auto;
+    color: #7e7e7e;
+    font-weight: 400;
+    vertical-align: middle;
+    line-height: 1; }
+  .purchace-popup > div > span i {
+    vertical-align: middle;
+    line-height: 1;
+    margin: auto 0;
+    color: #b1b1b1; }
 
 /* Bootstrap Progress */
 .progress {

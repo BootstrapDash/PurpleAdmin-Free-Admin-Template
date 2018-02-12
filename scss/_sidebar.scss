@@ -182,6 +182,17 @@
       margin-bottom: 13px;
     }
   }
+  .upgrade-button{
+    padding:20px 10px 10px 10px;
+    .purchase-button{
+      background-color: rgba(172, 50 ,228, 0.9);
+      @include background-image(theme-gradient-color(primary));
+      color: $white;
+      border: none;
+      line-height: 1;
+      vertical-align: middle;
+    }
+  }
 }
 //sidebar color variation
 .sidebar-light {
