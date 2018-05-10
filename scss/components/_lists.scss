@@ -52,3 +52,62 @@ dl {
     }
   }
 }
+
+.gradient-bullet-list {
+  padding-left: 0;
+  .rtl & {
+    padding-right: 0;
+  }
+  li {
+    position: relative;
+    list-style-type: none;
+    padding-left: 25px;
+    line-height: 1;
+    padding-bottom: 25px;
+    &:before,
+    &:after {
+      content:"";
+      position: absolute;
+    }
+    &:before {
+      top: 0;
+      left: 0;
+      width: 15px;
+      height: 15px;
+      border-radius: 100%;
+    }
+    &:after {
+      width: 11px;
+      height: 11px;
+      top: 2px;
+      left: 2px;
+      background: $white;
+      border-radius: 100%;
+    }
+    &:nth-child(1) {
+      &:before {
+        background: theme-gradient-color(danger);        
+      }
+    }
+    &:nth-child(2) {
+      &:before {
+        background: theme-gradient-color(info);        
+      }
+    }
+    &:nth-child(3) {
+      &:before {
+        background: theme-gradient-color(warning);        
+      }
+    }
+    &:nth-child(4) {
+      &:before {
+        background: theme-gradient-color(success);        
+      }
+    }
+    &:nth-child(5) {
+      &:before {
+        background: theme-gradient-color(primary);        
+      }
+    }
+  }
+}

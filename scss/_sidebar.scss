@@ -1,11 +1,10 @@
 /* Sidebar */
 
 .sidebar {
-  @extend .sidebar-grdient-dark;
+  min-height: calc(100vh - #{$navbar-height});
+  background: $sidebar-light-bg;
   font-family: $type1-regular;
-  min-height: 100%;
   padding: 0;
-  position: absolute;
   width: $sidebar-width-lg;
   z-index: 11;
   transition: width $action-transition-duration $action-transition-timing-function, background $action-transition-duration $action-transition-timing-function;
@@ -18,11 +17,10 @@
     flex-wrap: nowrap;
     flex-direction: column;
     margin-bottom: 60px;
-    margin-top: 16px;
 
     .nav-item {
-      padding:0 $sidebar-menu-padding-x-right 0 $sidebar-menu-padding-x-left;
-      @include transition-duration(0.45s);
+      padding:0 $sidebar-menu-padding-x;
+      @include transition-duration(0.25s);
       transition-property: background;
       -webkit-transition-property: background;
       .collapse {
@@ -32,12 +30,9 @@
       .nav-link {
         @include display-flex;
         @include align-items(center);
-        @include justify-content(flex-end);
         white-space: nowrap;
-        height: $nav-link-height;
         padding:$sidebar-menu-padding-y 0 $sidebar-menu-padding-y 0;
-        color: $sidebar-gradient-menu-color;
-        border-bottom: 1px solid rgba($white, 0.2);
+        color: $sidebar-light-menu-color;
         @include transition-duration(0.45s);
         transition-property: color;
         -webkit-transition-property: color;
@@ -48,7 +43,8 @@
           &.menu-icon {
             font-size: $sidebar-icon-font-size;
             line-height: 1;
-            margin-left: 0.8125rem;
+            margin-left: auto;
+            color: $sidebar-light-menu-icon-color;
             &:before {
               vertical-align: middle;
             }
@@ -58,10 +54,15 @@
             font: normal normal normal 24px/1 "Material Design Icons";
             line-height: 1;
             font-size: $sidebar-icon-font-size;
+            margin-left: auto;
+            color: $sidebar-light-menu-arrow-color;
             &:before{
               content: "\f141";
               font-size: inherit;
               color: inherit;
+            }
+            + .menu-icon {
+              margin-left: .25rem;
             }
           }
         }
@@ -72,20 +73,13 @@
           font-size: $sidebar-menu-font-size;
           line-height: 1;
           vertical-align: middle;
-          margin-right: auto;
-        }
-        .menu-sub-title{
-          font-size: 10px;
-          margin-right: auto;
         }
 
         .badge {
-          margin-left: auto;
+          margin-right: auto;
+          margin-left: 1rem;
         }
 
-        &:hover {
-          color: lighten($sidebar-gradient-menu-color, 5%);
-        }
         &[aria-expanded="true"]{
           .menu-arrow{
             &:before{
@@ -96,21 +90,57 @@
       }
 
       &.active {
-        background: $sidebar-gradient-menu-active-bg;
+        background: $sidebar-light-menu-active-bg;
         > .nav-link {
-          color: $sidebar-gradient-menu-active-color;
-          border-bottom: none;
-          .menu-title,
-          i {
-            color: inherit;
+          .menu-title {
+            color: $sidebar-light-menu-active-color;
+            font-family: $type1-medium;            
           }
-        }
-        .sub-menu{
-          border-top: 1px solid rgba($white, 0.2);
+          i {
+            color: theme-color(primary);
+          }
         }
       }
       &:hover{
-        background: $sidebar-gradient-menu-hover-bg;
+        background: $sidebar-light-menu-hover-bg;
+      }
+      &.nav-profile {
+        .nav-link {
+          height: auto;
+          line-height: 1;
+          border-top: 0;
+          padding: 1.25rem 0;
+          .nav-profile-image {
+            width: 44px;
+            height: 44px;
+            img {
+              width: 44px;
+              height: 44px;
+              border-radius: 100%;
+            }
+          }
+          .nav-profile-text {
+            margin-left: 1rem;
+          }
+          .nav-profile-badge {
+            font-size: 1.125rem;
+            margin-left: auto;
+          }
+        }
+      }
+      &.sidebar-actions {
+        margin-top: 1rem;
+        .nav-link {
+          border-top: 0;
+          display: block;
+          height: auto;
+        }
+        &:hover {
+          background: initial;
+          .nav-link {
+            color: initial;
+          }
+        }
       }
     }
 
@@ -119,7 +149,7 @@
         &:hover {
           &:not(.nav-category):not(.nav-profile) {
             > .nav-link {
-              color: $sidebar-dark-menu-hover-color;
+              color: $sidebar-light-menu-hover-color;
             }
           }
         }
@@ -127,243 +157,60 @@
     }
     &.sub-menu {
       margin-bottom: 20px;
-      padding-top: 12px;
       margin-top:0;
       list-style: none;
 
       .nav-item {
-        margin-right: auto;
         padding: 0;
         .nav-link {
-          color: $sidebar-gradient-submenu-color;
-          padding: 8px 30px 8px 30px;
+          color: $sidebar-light-submenu-color;
+          padding: $sidebar-submenu-item-padding;
           position: relative;
           font-size: $sidebar-submenu-font-size;
           line-height: 1;
           height: auto;
-          border-bottom: none;
-          display: inline-block;
-          &:before{
-            content: "\F374";
+          border-top: 0;
+          &:before {
+            content: "\F054";
             font-family: "Material Design Icons";
             display: block;
             position: absolute;
             left:0px;
             top:50%;
             @include transform(translateY(-50%));
+            color: lighten($sidebar-light-submenu-color, 10%);
+            font-size: .75rem;
           }
           &.active {
-            color: $sidebar-gradient-menu-active-color;
+            color: $sidebar-light-menu-active-color;
             background: transparent;
           }
-          &:hover{
-            color: $sidebar-gradient-submenu-hover-color;
+          &:hover {
+            color: $sidebar-light-submenu-hover-color;
           }
         }
-        &:hover{
+        &:hover {
           background: transparent;
         }
       }
     }
   }
-  .sidebar-progress{
-    padding:0 $sidebar-menu-padding-x-right 0 $sidebar-menu-padding-x-left;
-    p{
-      font-family: $type1-bold;
-      font-size: 15px;
-      margin-bottom: 13px;
-      &:last-child{
-        font-family: $type1-regular;
-        font-size: $default-font-size;
-      }
-    }
-    .progress{
-      max-width: 160px;
-      margin-bottom: 13px;
-    }
-  }
-  .upgrade-button{
-    padding:20px 10px 10px 10px;
-    .purchase-button{
-      background-color: rgba(172, 50 ,228, 0.9);
-      @include background-image(theme-gradient-color(primary));
-      color: $white;
-      border: none;
-      line-height: 1;
-      vertical-align: middle;
-    }
-  }
 }
-//sidebar color variation
-.sidebar-light {
-  background: $sidebar-light-bg;
-
-  .sidebar {
-    background: $sidebar-light-bg;
-    .nav {
-      .nav-item {
-        .nav-link {
-          color: $sidebar-light-menu-color;
-          .menu-title,
-          i {
-            color: inherit;
-          }
-        }
-
-        &.active {
-          background: $sidebar-light-menu-active-bg;
-          > .nav-link {
-            color: $sidebar-light-menu-active-color;
-            .menu-title,
-            i {
-              color: inherit;
-            }
-          }
-          .sub-menu{
-            .nav-item{
-              .nav-link{
-                color: $white;
-              }
-            }
-          }
-        }
-        &:hover {
-          background: $sidebar-light-menu-hover-bg;
-          .sub-menu{
-            .nav-item{
-              .nav-link{
-                color: $sidebar-light-menu-hover-color;
-              }
-            }
-          }
-        }
-        &.hover-open{
-          .nav-link{
-            .menu-title{
-              @include transition-duration(0s);
-            }
-          }
-          &:hover {
-            background: $sidebar-light-menu-hover-bg;
-            .sub-menu{
-              .nav-item{
-                .nav-link{
-                  color: $sidebar-light-submenu-color;
-                }
-              }
-            }
-          }
-        }
-      }
-      &.sub-menu {
-        .nav-item {
-          .nav-link {
-            color: $sidebar-light-submenu-color;
-            &.active {
-              color: $sidebar-light-submenu-color;
-            }
-          }
-          &:hover{
-            background: transparent;
-          }
-        }
-      }
-    }
-    .sidebar-progress{
-      p{
-        color: $sidebar-light-submenu-color;
-      }
-    }
-  }
-}
-
 
 /* style for off-canvas menu*/
 @media screen and (max-width: 991px) {
-  .row-offcanvas {
-    position: relative;
+  .sidebar-offcanvas {
+    position: fixed;
+    max-height: calc(100vh - #{$navbar-height});
+    top: $navbar-height;
+    bottom: 0;
+    overflow: auto;
+    right: -$sidebar-width-lg;
     -webkit-transition: all 0.25s ease-out;
     -o-transition: all 0.25s ease-out;
     transition: all 0.25s ease-out;
-
-    &.row-offcanvas-right {
+    &.active {
       right: 0;
-
-      .sidebar-offcanvas {
-        right: -100%; // 12 columns
-      }
-
-      &.active {
-        right: 50%; // 6 columns
-
-        .sidebar-offcanvas {
-          right: -50%; // 6 columns
-        }
-      }
-    }
-
-    &.row-offcanvas-left {
-      left: 0;
-
-      .sidebar-offcanvas {
-        left: -100%; // 12 columns
-      }
-
-      &.active {
-        left: 50%; // 6 columns
-
-        .sidebar-offcanvas {
-          left: -50%; // 6 columns
-        }
-      }
-    }
-
-    .sidebar-offcanvas {
-      position: absolute;
-      top: 0;
-      width: 50%; // 6 columns
-
-      .nav {
-        display: block;
-      }
-    }
-  }
-}
-@media screen and (max-width: 580px) {
-  //for smaller devices like iphone 5
-
-  .row-offcanvas {
-    &.row-offcanvas-right {
-      &.active {
-        right: 80%;
-
-        .sidebar-offcanvas {
-          right: -75%;
-        }
-      }
-    }
-
-    .sidebar-offcanvas {
-      width: 75%;
-    }
-  }
-}
-@media screen and (max-width: 350px) {
-  //for smaller devices like iphone 5
-
-  .row-offcanvas {
-    &.row-offcanvas-right {
-      &.active {
-        right: 100%;
-
-        .sidebar-offcanvas {
-          right: -91%;
-        }
-      }
-    }
-
-    .sidebar-offcanvas {
-      width: 91%;
     }
   }
 }

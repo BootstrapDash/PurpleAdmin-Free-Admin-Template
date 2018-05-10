@@ -1,52 +1,86 @@
 /* Checkboxes and Radios */
 
-.form-check,
-.form-radio {
+.form-check {
   position: relative;
   display: block;
   margin-top: 15px;
   margin-bottom: 10px;
+  padding-left: 0;
 
   .form-check-label {
     display: block;
-    padding-left: 30px;
-    .rtl & {
-      padding-left: 0;
-      padding-right: 30px;
-    }
+    margin-left: 1.75rem;
+    font-size: $default-font-size;
     line-height: 1.5;
+    .rtl & {
+      margin-left: 0;
+      margin-right: 1.75rem;
+    }
 
     input {
       position: absolute;
-      margin-left: -20px;
-      margin-top: 4px\9;
       top: 0;
       left: 0;
       .rtl & {
         left: auto;
         right: 0;
       }
+      margin-left: 0;
+      margin-top: 0;
       z-index: 1;
       cursor: pointer;
       opacity: 0;
       filter: alpha(opacity=0);
-      margin-top: 0;
     }
-  }
-}
-
-.form-check {
-  label {
-    font-size: $default-font-size;
-    line-height: 1.5;
-
-    input {
+    input[type="checkbox"] {
+      + .input-helper {
+        &:before,
+        &:after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          .rtl & {
+            left: auto;
+            right: 0;
+          }
+        }
+        &:before {
+          content: "";
+          width: 18px;
+          height: 18px;
+          border-radius: 2px;
+          border: solid theme-color(primary);
+          border-width: 2px;
+          @include transition(all);
+          transition-duration: 0s;
+          -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+        }
+  
+        &:after {
+          @include transition(all);
+          transition-duration: 0s;
+          -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+          font-family: Material Design Icons;
+          opacity: 0;
+          filter: alpha(opacity=0);
+          -webkit-transform: scale(0);
+          -ms-transform: scale(0);
+          -o-transform: scale(0);
+          transform: scale(0);
+          content: '\F12C';
+          font-size: .9375rem;
+          font-weight: bold;
+          color: $white;
+        }
+      }
       &:checked {
         +.input-helper {
           &:before {
-            background-color: color(white);
+            background: theme-gradient-color(primary);
+            border-width: 0;
           }
-
           &:after {
             width: 18px;
             opacity: 1;
@@ -70,130 +104,30 @@
         &:checked {
           + .input-helper {
             &:after {
-              color: $border-color;
+              background: $border-color;
+              color: $white;
             }
           }
         }
       }
     }
-
-    .input-helper {
-      &:before {
-        position: absolute;
-        content: "";
-        top: 2px;
-        width: 18px;
-        height: 18px;
-        border-radius: 2px;
-        left: 0;
-        .rtl & {
-          left: auto;
-          right: 0;
-        }
-        border: 2px solid $border-color;
-        -webkit-transition: all;
-        -o-transition: all;
-        transition: all;
-        transition-duration: 0s;
-        -webkit-transition-duration: 250ms;
-        transition-duration: 250ms;
-      }
-
-      &:after {
-        -webkit-transition: all;
-        -o-transition: all;
-        transition: all;
-        transition-duration: 0s;
-        -webkit-transition-duration: 250ms;
-        transition-duration: 250ms;
-        font-family: Material Design Icons;
-        opacity: 0;
-        filter: alpha(opacity=0);
-        -webkit-transform: scale(0);
-        -ms-transform: scale(0);
-        -o-transform: scale(0);
-        transform: scale(0);
-        content: '\F12C';
-        position: absolute;
-        font-size: .9375rem;
-        font-weight: bold;
-        left: 0;
-        .rtl & {
-          left: auto;
-          right: 0;
-        }
-        top: 2px;
-        color: theme-color(info);
-      }
-    }
-  }
-
-  &.form-check-flat {
-    label {
-      input {
-        &:checked {
-          +.input-helper {
-            &:before {
-              background-color: theme-color(success);
-              border: none;
-            }
-          }
-        }
-
-        &:disabled {
-          + .input-helper {
-            &:after {
-              color: color(white);
-            }
-
-            &:before {
-              border-color: $border-color;
-            }
-          }
-
-          &:checked {
-            + .input-helper {
-              &:before {
-                background: color(gray-lightest);
-              }
-            }
-          }
-        }
-      }
-
-      .input-helper {
-        &:before {
-          border: 2px solid $border-color;
-        }
-
-        &:after {
-          color: color(white);
-        }
-      }
-    }
-  }
-}
-
-.form-radio {
-  label {
-    input {
+    input[type="radio"] {
       +.input-helper {
         &:before {
           position: absolute;
           content: "";
-          top: 2px;
+          top: 0;
           left: 0;
           .rtl & {
             left: auto;
             right: 0;
           }
-          border: 2px solid $border-color;
+          border: solid theme-color(primary);
+          border-width: 2px;
           width: 20px;
           height: 20px;
           border-radius: 50%;
-          -webkit-transition: all;
-          -o-transition: all;
-          transition: all;
+          @include transition(all);
           transition-duration: 0s;
           -webkit-transition-duration: 250ms;
           transition-duration: 250ms;
@@ -203,9 +137,9 @@
           content: "";
           width: 8px;
           height: 8px;
-          background: theme-color(danger);
+          background: $white;
           border-radius: 50%;
-          top: 8px;
+          top: 6px;
           left: 6px;
           .rtl & {
             left: auto;
@@ -230,8 +164,8 @@
       &:checked {
         +.input-helper {
           &:before {
-            background-color: $white;
-            border: 2px solid $border-color;
+            background: theme-gradient-color(primary);
+            border-width: 0;
           }
 
           &:after {
@@ -256,48 +190,45 @@
         &:checked {
           + .input-helper {
             &:before {
-              background-color: $white;
-              border-color: $border-color;
+              background: $border-color;
             }
 
             &:after {
-              background-color: $border-color;
+              background: $white;
             }
           }
         }
       }
     }
   }
+}
 
-  &.form-radio-flat {
-    label {
-      input {
-        &:checked {
+@each $color, $value in $theme-gradient-colors {
+  .form-check-#{$color} {
+    &.form-check {
+      label {
+        input[type="checkbox"],
+        input[type="radio"] {
           +.input-helper {
             &:before {
-              background: theme-color(success);
-              border-color: theme-color(success);
+              border-color: theme-color($color);
             }
-
-            &:after {
-              width: 20px;
-              height: 20px;
-              top: 2px;
-              left: -2px;
-              .rtl & {
-                left: auto;
-                right: -2px;
+          }
+          &:checked {
+            +.input-helper {
+              &:before {
+                background: $value;
               }
-              color: color(white);
-              background: none;
-              content: '\F12C';
-              font-family: Material Design Icons;
-              text-align: center;
-              font-weight: bold;
             }
           }
         }
       }
     }
+  }
+}
+
+@media (min-width: 576px) {
+  .form-inline .form-check {
+
   }
 }

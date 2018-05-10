@@ -4,6 +4,8 @@ body {
   font-size: 1rem;
   font-family: $type1-regular;
   font-weight: initial;
+  line-height: normal;
+  -webkit-font-smoothing: antialiased;
 }
 h1,
 h2,
@@ -17,7 +19,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: $type1-bold;
+  font-family: $type1-medium;
 }
 p {
   font-size: $default-font-size;
@@ -47,7 +49,8 @@ h6,
   font-size: .9375rem;
 }
 p {
-  font-size: .88rem;
+  font-size: .9375rem;
+  line-height: 1.5;
 }
 .display-1 {
   font-size: 3.75rem;
@@ -103,35 +106,6 @@ address {
       font-size: 8rem;
     }
   }
-}
-.page-title {
-  color: $black;
-  margin: 0.38rem 0 0.75rem 0;
-}
-.card-title {
-  color: color(black);
-  margin-bottom: 1.125rem;
-  text-transform: capitalize;
-}
-.card-subtitle {
-  @extend .text-gray;
-  font-family: $type1-regular;
-  margin-top: 0.625rem;
-  margin-bottom: 0.625rem;
-
-}
-.card-description{
-  margin-bottom: .9375rem;
-  font-family: $type1-regular;
-}
-.font-weight-normal {
-  font-family: $type1-regular !important;
-}
-.bold-text {
-  font-family: $type1-bold;
-}
-.text-small{
-  font-size: $default-font-size;
 }
 .icon-lg {
   font-size: 3.438rem;

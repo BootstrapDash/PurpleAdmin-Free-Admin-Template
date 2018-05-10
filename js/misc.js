@@ -44,52 +44,43 @@
     applyStyles();
 
     function applyStyles() {
-
-      //setting content wrapper height
-      setTimeout(function() {
-        if (contentWrapper.outerHeight() < (sidebar.outerHeight() - footer.outerHeight())) {
-          contentWrapper.css({
-            'min-height': sidebar.outerHeight() - footer.outerHeight()
-          });
-        }
-
-        if (sidebar.outerHeight() < (contentWrapper.outerHeight() + footer.outerHeight())) {
-          sidebar.css({
-            'min-height': contentWrapper.outerHeight() + footer.outerHeight()
-          });
-        }
-
-      }, 10);
-
-
       //Applying perfect scrollbar
-      $('.product-chart-wrapper, .table-responsive').perfectScrollbar();
-    }
-
-    $('.sidebar [data-toggle="collapse"]').on("click", function(event) {
-      //Updating content wrapper height to sidebar height on expanding a menu in sidebar
-      var clickedItem = $(this);
-      console.log(clickedItem);
-      if (clickedItem.attr('aria-expanded') === 'false') {
-        var scrollTop = scroller.scrollTop() - 20;
-      } else {
-        var scrollTop = scroller.scrollTop() - 100;
-      }
-      setTimeout(function() {
-        if (contentWrapper.outerHeight() + footer.outerHeight() !== sidebar.outerHeight()) {
-          applyStyles();
-          scroller.animate({
-            scrollTop: scrollTop
-          }, 350);
+      if (!body.hasClass("rtl")) {
+        if ($('.tab-content .tab-pane.scroll-wrapper').length) {
+          const settingsPanelScroll = new PerfectScrollbar('.settings-panel .tab-content .tab-pane.scroll-wrapper');
         }
-      }, 400);
-    });
+        if ($('.chats').length) {
+          const chatsScroll = new PerfectScrollbar('.chats');
+        }
+      }
+    }
 
     //checkbox and radios
     $(".form-check label,.form-radio label").append('<i class="input-helper"></i>');
 
-    $(".purchace-popup .popup-dismiss").on("click",function(){
-      $(".purchace-popup").slideToggle();
-    });
+    //fullscreen
+    $("#fullscreen-button").on("click", function toggleFullScreen() {
+      if ((document.fullScreenElement !== undefined && document.fullScreenElement === null) || (document.msFullscreenElement !== undefined && document.msFullscreenElement === null) || (document.mozFullScreen !== undefined && !document.mozFullScreen) || (document.webkitIsFullScreen !== undefined && !document.webkitIsFullScreen)) {
+        if (document.documentElement.requestFullScreen) {
+          document.documentElement.requestFullScreen();
+        } else if (document.documentElement.mozRequestFullScreen) {
+          document.documentElement.mozRequestFullScreen();
+        } else if (document.documentElement.webkitRequestFullScreen) {
+          document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+        } else if (document.documentElement.msRequestFullscreen) {
+          document.documentElement.msRequestFullscreen();
+        }
+      } else {
+        if (document.cancelFullScreen) {
+          document.cancelFullScreen();
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+        } else if (document.webkitCancelFullScreen) {
+          document.webkitCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+        }
+      }
+    })
   });
 })(jQuery);

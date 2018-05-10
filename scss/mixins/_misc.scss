@@ -1,13 +1,6 @@
 /* Miscellaneous Mixins */
 
-@mixin placeholder {
-  &::-webkit-input-placeholder {@content}
-  &:-moz-placeholder           {@content}
-  &::-moz-placeholder          {@content}
-  &:-ms-input-placeholder      {@content}
-}
-
-// generic transform
+// general transform
 @mixin transform($transforms) {
 	   -moz-transform: $transforms;
 	     -o-transform: $transforms;
@@ -15,6 +8,7 @@
 	-webkit-transform: $transforms;
           transform: $transforms;
 }
+
 // rotate
 @mixin rotate ($deg) {
   @include transform(rotate(#{$deg}deg));
@@ -46,4 +40,20 @@
 	overflow: hidden;
 	max-width:100%;
 	white-space: nowrap;
+}
+
+// Placeholder
+@mixin placeholder {
+	&::-webkit-input-placeholder {
+		@content
+	}
+	&:-moz-placeholder {
+		@content
+	}
+	&::-moz-placeholder {
+		@content
+	}
+	&:-ms-input-placeholder {
+		@content
+	}
 }

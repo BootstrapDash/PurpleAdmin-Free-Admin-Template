@@ -118,15 +118,15 @@ button:visited {
 }
 
 .bootstrap-select .dropdown-toggle:focus {
-    outline: 0 !important;
-    outline-offset: 0
+    outline: 0 ;
+    outline-offset: 0;
 }
 
 .dropdown-menu>li>a:active,
 .dropdown-menu>li>a:focus,
 .dropdown-menu>li>a:hover,
 .dropdown-menu>li>a:visited {
-    outline: 0 !important
+    outline: 0;
 }
 
 a:focus,

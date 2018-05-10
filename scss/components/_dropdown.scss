@@ -1,0 +1,30 @@
+/* Dropdowns */
+
+.dropdown {
+  .dropdown-toggle {
+    &:after {
+      border-top: 0;
+      border-right: 0;
+      border-left: 0;
+      border-bottom: 0;
+      font: normal normal normal 24px/1 "Material Design Icons";
+      content: "\f140";  
+      width: auto;
+      height: auto;
+      vertical-align: baseline;
+      font-size: .75rem;
+    }
+  }
+  .dropdown-menu {
+    margin-top: .75rem;
+    font-size: $default-font-size;
+    box-shadow: 0px 1px 15px 1px rgba(230, 234, 236, 0.35);    
+    .dropdown-item {
+      font-size: 1rem;
+      padding: .25rem 1.5rem;
+      &:active {
+        background: initial;
+      }
+    }
+  }
+}

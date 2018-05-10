@@ -41,34 +41,35 @@ $colors: (
 
 
 $theme-colors: (
-  primary:         #00bbd9,
-  secondary:       #e4eaec,
-  success:         #2ecc71,
-  info:            #1976d2,
-  warning:         #ffb136,
-  danger:          #e74a25,
-  light:           $white,
-  dark:            #3a3f51
+  primary:         #b66dff,
+  secondary:       #d8d8d8,
+  success:         #1bcfb4,
+  info:            #198ae3,
+  warning:         #fed713,
+  danger:          #fe7c96,
+  light:           #f8f9fa,
+  dark:            #3e4b5b
 );
 
 $theme-gradient-colors: (
-  primary:         linear-gradient(to left, rgba(172, 50 ,228, 0.9), rgba(121, 24 ,242, 0.9) 49%, rgba(72, 1 ,255, 0.9)),
-  secondary:       linear-gradient(to left, rgba(255, 5 ,124, 0.9), rgba(141, 11 ,147, 0.9) 49%, rgba(50, 21 ,117, 0.9)),
-  success:         linear-gradient(to right, rgba(80, 204 ,127, 0.9), rgba(245, 209 ,0, 0.9)),
-  info:            linear-gradient(to right, rgba(68, 129 ,235, 0.9), rgba(4, 190 ,254, 0.9)),
-  warning:         linear-gradient(to right, rgba(255, 88 ,88, 0.9), rgba(240, 152 ,25, 0.9)),
-  danger:          linear-gradient(to right, rgba(240, 147 ,251, 0.9), rgba(245, 87 ,108, 0.9))
+  primary:         linear-gradient(to right, #da8cff, #9a55ff),
+  secondary:       linear-gradient(to right, #e7ebf0, #868e96),
+  success:         linear-gradient(to right, #84d9d2, #07cdae),
+  info:            linear-gradient(to right, #90caf9, #047edf 99%),
+  warning:         linear-gradient(to right, #f6e384, #ffd500),
+  danger:          linear-gradient(to right, #ffbf96, #fe7096),
+  light:           linear-gradient(to bottom, #f4f4f4, #e4e4e9),
+  dark:            linear-gradient(89deg, #5e7188, #3e4b5b)
 );
+
 
 ////////// COLOR SYSTEM //////////
 
-
-
 ////////// COLOR VARIABLES //////////
-$content-bg: #F6F8FA;
+$content-bg: #f2edf3;
 $footer-bg: $content-bg;
 $footer-color: color(dark);
-$border-color: #e6ecf5;
+$border-color: #ebedf2;
 
 ////////// COLOR VARIABLES //////////
 
@@ -93,51 +94,53 @@ $social-colors: (
 
 ////////// FONTS//
 
-$type1-regular:    'pt-sans-regular', sans-serif;
-$type1-bold:     'pt-sans-bold', sans-serif;
+$type1-light:     'ubuntu-light', sans-serif;
+$type1-regular:    'ubuntu-regular', sans-serif;
+$type1-medium:    'ubuntu-medium', sans-serif;
+$type1-bold:     'ubuntu-bold', sans-serif;
 
 $default-font-size: .875rem; // 14px as base font size
 
-$text-muted: #b7b7b7;
-$body-color: $black;
+$text-muted: #9c9fa6;
+$body-color: #343a40;
 
 ////////// FONT VARIABLES //////////
 
 ////////// SIDEBAR ////////
-$sidebar-width-lg: 247px;
+$sidebar-width-lg: 260px;
 $sidebar-width-mini: 185px;
 $sidebar-width-icon: 70px;
 
-
-$sidebar-gradient-menu-color: rgba($white, 0.7);
-$sidebar-gradient-submenu-color: rgba($white, 0.5);
-$sidebar-gradient-submenu-hover-color: $white;
-$sidebar-gradient-menu-active-bg: rgba($white, 0.1);
-$sidebar-gradient-menu-active-color: $white;
-$sidebar-gradient-menu-hover-bg: $sidebar-gradient-menu-active-bg;
-
 $sidebar-light-bg: $white;
-$sidebar-light-menu-color: rgba(121, 24 ,242, 0.9);
+$sidebar-light-menu-color: #3e4b5b;
 $sidebar-light-submenu-color: #888;
-$sidebar-light-menu-active-bg: rgba(121, 24 ,242, 0.9);
-$sidebar-light-menu-active-color: $white;
-$sidebar-light-menu-hover-bg: darken($sidebar-light-menu-active-bg,5%);
-$sidebar-light-menu-hover-color: $white;
+$sidebar-light-menu-active-bg: $white;
+$sidebar-light-menu-active-color: theme-color(primary);
+$sidebar-light-menu-hover-bg: darken($sidebar-light-bg, 1%);
+$sidebar-light-menu-hover-color: darken($sidebar-light-menu-color, 10%);
+$sidebar-light-submenu-hover-color: darken($sidebar-light-submenu-color, 20%);
+$sidebar-light-menu-icon-color: #bba8bff5;
+$sidebar-light-menu-arrow-color: #9e9da0;
+$sidebar-light-menu-border-color: #f2edf3;
 
+$sidebar-dark-bg: #18151e;
+$sidebar-dark-menu-color: $white;
+$sidebar-dark-menu-active-bg: #282037;
+$sidebar-dark-menu-active-color: color(white);
 $sidebar-dark-menu-hover-bg: #282037;
 $sidebar-dark-menu-hover-color: color(white);
+$sidebar-dark-submenu-color: $sidebar-dark-menu-color;
+$sidebar-dark-submenu-hover-bg: initial;
+$sidebar-dark-submenu-hover-color: #ffffff;
 
 $sidebar-menu-font-size: $default-font-size;
-$sidebar-menu-padding-y: 15px;
-$sidebar-menu-padding-x-left: 25px;
-$sidebar-menu-padding-x-right: 25px;
-$nav-link-height: 48px;
+$sidebar-menu-padding-y: 1.125rem;
+$sidebar-menu-padding-x: 2.25rem;
 
-$sidebar-submenu-padding: 0 0 0 1rem;
-$sidebar-submenu-font-size: $default-font-size;
-$sidebar-submenu-item-padding: .5rem 0rem;
+$sidebar-submenu-font-size: .8125rem;
+$sidebar-submenu-item-padding: .75rem 2rem .75rem 2rem;
 
-$sidebar-icon-font-size: 0.9375rem;
+$sidebar-icon-font-size: 1.125rem;
 $sidebar-arrow-font-size: .625rem;
 
 $sidebar-profile-bg: transparent;
@@ -145,16 +148,42 @@ $sidebar-profile-padding: .75rem 1.625rem .75rem 1.188rem;
 
 $sidebar-mini-menu-padding: .8125rem 1rem .8125rem 1rem;
 
+$sidebar-icon-only-menu-padding: .5rem 1.625rem .5rem 1.188rem;
+$sidebar-icon-only-submenu-padding: 0 0 0 1.5rem;
+
+$rtl-sidebar-submenu-padding: 0 1.5rem 0 0;
+
 $icon-only-collapse-width: 190px;
-$icon-only-bg-expand: $purple;
+$icon-only-menu-bg-light: $sidebar-light-menu-hover-bg;
+$icon-only-menu-bg-dark: $sidebar-dark-menu-hover-bg;
 
 ///////// SIDEBAR ////////
 
+///////// SETTINGS PANEL ////////
+
+$settings-panel-width: 300px;
+
+///////// HORIZONTAL MENU /////////
+$horizontal-menu-bg : #f6f8fa;
+$horizontal-menu-height : 4rem;
+$horizontal-menu-padding: 0 1rem;
+$horizontal-menu-item-color: #202339;
+$horizontal-menu-submenu-color: $horizontal-menu-item-color;
+$horizontal-menu-font-size: .875rem;
+$horizontal-menu-item-padding: .75rem 0;
+$horizontal-menu-icon-font-size: .9375rem;
+$horizontal-menu-submenu-item-padding: .85rem 0;
+
+$horizontal-boxed-menu-color: #9c9fa6;
+
+$horizontal-full-width-menu-color: #9c9fa6;
+///////// HORIZONTAL MENU /////////
+
 ///////// NAVBAR ////////
 
-$navbar-height: 59px;
-$navbar-light-color: #202339;
-$navbar-font-size: .9375rem;
+$navbar-height: 70px;
+$navbar-menu-color: #9c9fa6;
+$navbar-font-size: .875rem;
 $navbar-icon-font-size: 1.25rem;
 
 ///////// NAVBAR ////////
@@ -163,34 +192,43 @@ $navbar-icon-font-size: 1.25rem;
 
 ///////// BUTTONS ////////
 
-$button-fixed-width:        120px;
-$input-btn-padding-y:       0.56rem;
-$input-btn-padding-x:       1.375rem;
-$input-btn-line-height:     1;
+$button-fixed-width:        150px;
+$btn-padding-y:       .875rem;
+$btn-padding-x:       2.5rem;
+$btn-line-height:     1;
 
-$input-btn-padding-y-xs:    .5rem;
-$input-btn-padding-x-xs:    .75rem;
+$btn-padding-y-xs:    .5rem;
+$btn-padding-x-xs:    .75rem;
 
-$input-btn-padding-y-sm:    0.50rem;
-$input-btn-padding-x-sm:    0.81rem;
+$btn-padding-y-sm:    .50rem;
+$btn-padding-x-sm:    .81rem;
 
-$input-btn-padding-y-lg:    0.94rem;
-$input-btn-padding-x-lg:    1.94rem;
+$btn-padding-y-lg:    1rem;
+$btn-padding-x-lg:    3rem;
 
-$input-btn-font-size:       .875rem;
-$input-btn-font-size-xs:    .625rem;
-$input-btn-font-size-sm:    .875rem;
-$input-btn-font-size-lg:    .875rem;
+$btn-font-size:       .875rem;
+$btn-font-size-xs:    .625rem;
+$btn-font-size-sm:    .875rem;
+$btn-font-size-lg:    .875rem;
 
 $btn-border-radius:         .1875rem;
 $btn-border-radius-xs:      .1875rem;
 $btn-border-radius-sm:      .1875rem;
 $btn-border-radius-lg:      .1875rem;
 
-$social-btn-padding:        18px;
-$social-btn-icon-size:      1rem;
-
 ///////// BUTTONS ////////
+
+
+
+////////// TOOLTIP VARIABLES //////////
+
+//default styles
+$tooltip-font-size:     .75rem;
+$tooltip-padding-y:     .4rem;
+$tooltip-padding-x:     .75rem;
+$tooltip-border-radius: .375rem;
+
+////////// TOOLTIP VARIABLES //////////
 
 
 
@@ -199,7 +237,20 @@ $social-btn-icon-size:      1rem;
 $input-bg:                color(white);
 $input-border-radius:     2px;
 $input-placeholder-color: #c9c8c8;
-$input-font-size: .75rem;
+$input-font-size: .8125rem;
+
+$input-padding-y:       .875rem;
+$input-padding-x:       1.375rem;
+$input-line-height:     1;
+
+$input-padding-y-xs:    .5rem;
+$input-padding-x-xs:    .75rem;
+
+$input-padding-y-sm:    .50rem;
+$input-padding-x-sm:    .81rem;
+
+$input-padding-y-lg:    .94rem;
+$input-padding-x-lg:    1.94rem;
 
 ///////// FORMS /////////
 
@@ -226,12 +277,15 @@ $table-inverse-color: color(white);
 
 
 ////////// MEASUREMENT AND PROPERTY VARIABLES //////////
+
+$boxed-container-width: 1200px;
 $border-property: 1px solid $border-color;
-$card-spacing-y: 1.875rem;
-$card-padding-y: 1.88rem;
-$card-padding-x: 1.81rem;
+$card-spacing-y: 2.5rem;
+$card-padding-y: 2.5rem;
+$card-padding-x: 2.5rem;
 $card-border-radius: .3125rem;
-$grid-gutter-width: 30px;
+$card-description-color: #76838f;
+$grid-gutter-width: 40px;
 $action-transition-duration: 0.25s;
 $action-transition-timing-function: ease;
 ////////// OTHER VARIABLES //////////
@@ -300,3 +354,18 @@ $modal-sm:                          300px;
 $modal-transition:                  transform .4s ease;
 
 ////////// MODALS VARIABLES //////////
+
+/////////  TABS VARIABLES //////////
+$nav-tabs-border-color:             #ebedf2;
+$nav-tabs-link-bg:                  #f6f8fa;
+$nav-tabs-link-color:               #000000;
+$nav-tabs-link-hover-border-color:  $nav-tabs-border-color $nav-tabs-border-color $nav-tabs-border-color;
+$nav-tabs-link-active-color:        $body-color;
+$nav-tabs-link-active-bg:           $white;
+$nav-tabs-link-active-border-color: $nav-tabs-border-color $nav-tabs-border-color $nav-tabs-link-active-bg;
+$nav-pills-custom-bg:               #fcfcfd;
+////////   TABS VARIABLES /////////
+
+////////   CALENDAR  //////////////
+$fullcalendar-color: #a8b2b9;
+////////   CALENDAR  //////////////

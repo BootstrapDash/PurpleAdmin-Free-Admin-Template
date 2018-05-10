@@ -1,8 +1,8 @@
 /*------------------------------------------------------------------
  [Master Stylesheet]
 
-  Project:	Purple Admin (Free)
-  Version:	1.0
+  Project:	Purple Admin
+  Version:	2.0.0
 -------------------------------------------------------------------*/
 
 
@@ -16,11 +16,15 @@
   * Boostrap Main SCSS
   * Template mixins
     + Animation Mixins
+    + Background Mixins
     + Badge Mixins
     + Button Mixins
     + Miscellaneous Mixins
     + BlockQuote Mixins
     + Cards Mixins
+    + Color Functions Mixins
+    + Tooltips
+    + popovers
   * Core Styles
     + Reset Styles
     + Fonts
@@ -34,17 +38,20 @@
     + Layouts
     + Utilities
     + Demo styles
-    + Authentication
   * Components
-    + Banners
+    + Badges
+    + Boostrap Progress
     + Buttons
     + Cards
     + Checkboxes and Radios
+    + Dropdowns
     + Forms
     + Icons
     + Lists
     + Preview
     + Tables
+  * Landing screens
+    + Auth
 -------------------------------------------------------------------*/
 
 
@@ -68,11 +75,12 @@
 
 /*-------------------------------------------------------------------*/
 /* === Template mixins === */
-@import "mixins/animation";
-@import "mixins/buttons";
-@import "mixins/badges";
 @import "mixins/misc";
+@import "mixins/animation";
+@import "mixins/background";
+@import "mixins/badges";
 @import "mixins/blockqoute";
+@import "mixins/buttons";
 @import "mixins/cards";
 
 /*-------------------------------------------------------------------*/
@@ -86,19 +94,17 @@
 @import "typography";
 @import "misc";
 @import "footer";
-@import "layouts";
 @import "utilities";
 @import "demo";
-@import "auth";
 
 /*-------------------------------------------------------------------*/
 /* === Components === */
-@import "components/buttons";
 @import "components/badges";
-@import "components/banners";
 @import "components/bootstrap-progress";
+@import "components/buttons";
 @import "components/cards";
 @import "components/checkbox-radio";
+@import "components/dropdown";
 @import "components/forms";
 @import "components/icons";
 @import "components/lists";
@@ -106,3 +112,5 @@
 @import "components/tables";
 
 /*-------------------------------------------------------------------*/
+/* === Landing screens === */
+@import "landing-screens/auth";
