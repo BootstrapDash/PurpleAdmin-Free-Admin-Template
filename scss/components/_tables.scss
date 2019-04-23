@@ -34,3 +34,13 @@
     }
   }
 }
+
+.table-wrap{
+  width: 100%;
+
+ &--responsive{
+  @media (max-width: 576px){
+    overflow-x: auto;
+  }
+ }
+}

@@ -20891,6 +20891,16 @@ dl li {
   border: none;
 }
 
+.table-wrap {
+  width: 100%;
+}
+
+@media (max-width: 576px) {
+  .table-wrap--responsive {
+    overflow-x: auto;
+  }
+}
+
 /*-------------------------------------------------------------------*/
 /* === Landing screens === */
 /* Auth */
