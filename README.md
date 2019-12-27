@@ -38,9 +38,9 @@ Purple Admin is released under MIT license. Purple Admin is a free Bootstrap 4 a
 
 2 - After the files have been downloaded you will get a folder with all the required files
 
-3 - You can install all the dependencies in the template by running the command npm install. All the required files are in the node modules.
+3 - You can install all the dependencies in the template by running the command `npm install`. All the required files are in the node modules.
 
-4 - Find the file named index.html, check what all components you need. Open the file in a text editor and you can start editing.
+4 - Find the file named `index.html`, check what all components you need. Open the file in a text editor and you can start editing.
 
 5 - Now that your project has now kick-started, all you need to do now is to code, code, and code to your heart's content.
 
@@ -56,9 +56,9 @@ After Gulp has been installed, follow the steps below to contribute.
   <br>
 	1 - Fork and clone the repo of Purple Admin.
   <br>
-	2 - Run the command npm install to install all the dependencies.
+	2 - Run the command `npm install` to install all the dependencies.
   <br>
-	3 - Enter the command gulp serve. This will open Purple Admin in your default browser.
+	3 - Enter the command `gulp serve` . This will open Purple Admin in your default browser.
   <br>
 	4 - Make your valuable contribution
   <br>
