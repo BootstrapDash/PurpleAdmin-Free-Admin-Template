@@ -1,3 +1,4 @@
+[![Run on Repl.it](https://repl.it/badge/github/BootstrapDash/PurpleAdmin-Free-Admin-Template)](https://repl.it/github/BootstrapDash/PurpleAdmin-Free-Admin-Template)
 <a href="http://www.bootstrapdash.com/demo/purple-admin-free" target="_blank"><img src="screenshot.jpg"></a>
 
 <h1>PurpleAdmin-Free-Admin-Template</h1>
