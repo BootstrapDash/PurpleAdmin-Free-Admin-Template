@@ -12,7 +12,7 @@
   font-size: calc(#{$default-font-size} - 0.05rem);
   font-family: $type1-regular;
   a {
-    color: theme-color(success);
+    color: $success;
     font-size: inherit;
   }
   @media (max-width: 991px) {

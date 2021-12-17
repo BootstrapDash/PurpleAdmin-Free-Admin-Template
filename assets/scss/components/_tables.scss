@@ -22,6 +22,7 @@
     font-size: $default-font-size;
     line-height: 1;
     white-space: nowrap;
+    padding: $table-cell-padding;
 
     img {
       width: 36px;
@@ -43,4 +44,10 @@
       border: none;
     }
   }
+}
+.table > :not(:last-child) > :last-child > *, .jsgrid .jsgrid-table > :not(:last-child) > :last-child > * {
+  border-bottom-color: $border-color;
+}
+.table > :not(:first-child), .jsgrid .jsgrid-table > :not(:first-child) {
+  border-top: none;
 }

@@ -36,7 +36,7 @@
           font-size: 1.125rem;
           margin: 0;
           .rtl & {
-            @extend .ml-0;
+            @extend .ms-0;
           }
         }
       }

@@ -53,11 +53,11 @@
   }
 
   .remove {
-    @extend .ml-auto;
+    @extend .ms-auto;
     @extend .text-secondary;
     .rtl & {
-      @extend .ml-0;
-      @extend .mr-auto;
+      @extend .ms-0;
+      @extend .me-auto;
     }
     cursor: pointer;
     font-size: 1.438rem;
@@ -70,7 +70,7 @@
 
   .completed {
     text-decoration: line-through;
-    text-decoration-color: theme-color(info);
+    text-decoration-color: $info;
     .remove {
       @extend .text-primary;
     }

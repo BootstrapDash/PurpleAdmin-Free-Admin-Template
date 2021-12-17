@@ -7,7 +7,7 @@
       right: 25px;
       font-size: 15px;
       font-weight: bold;
-      color: lighten(theme-color(danger), 10%);
+      color: lighten($danger, 10%);
       background: lighten(color(gray-light), 40%);
       height: 15px;
       width: 16px;

@@ -80,12 +80,21 @@
   }
 }
 
+@media (min-width: 576px) {
+  .card-columns {
+    column-count: 3;
+    column-gap: 1.25rem;
+    orphans: 1;
+    widows: 1;
+    .card {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 0.75rem;
+    }
+  }
+}
 @each $color, $value in $theme-colors {
   .card-inverse-#{$color} {
-    @include card-inverse-variant(
-      rgba(theme-color($color), 0.2),
-      theme-color-level($color, 1),
-      theme-color-level($color, 3)
-    );
+    @include card-inverse-variant(rgba($value, .2), theme-color-level($value, 1), theme-color-level($value, 3));
   }
 }

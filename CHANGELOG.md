@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## V 5.0.0
+- Bootstrap5
+
+
+## V 4.0.0
+- footer links
+- 
 ## V 3.0.0
 - Better changes for file structure
 - Design improvements
@@ -7,7 +14,7 @@
 - Bug fixes
 
 ## V 2.0.0
-- Updated to bootstrap 4.1 version
+- Updated to Bootstrap 5.1 version
 - Improved design
 - Migrated all plugins from bower component to npm component
 - Removed deprecated plugins

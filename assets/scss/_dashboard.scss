@@ -128,7 +128,7 @@
   }
 
   .badge {
-    background-color: rgba(color(white), .2);
+    background-color: rgba($white, .2);
     font-size: 1.125rem;
     padding: 0.5rem 1.25rem;
   }
@@ -160,19 +160,19 @@
 
     &:nth-child(1) {
       .bg {
-        background: theme-color(info);
+        background: $info;
       }
     }
 
     &:nth-child(2) {
       .bg {
-        background: theme-color(primary);
+        background: $primary;
       }
     }
 
     &:nth-child(3) {
       .bg {
-        background: theme-color(danger);
+        background: $danger;
       }
     }
   }
@@ -219,7 +219,7 @@
       &.active {
         font-weight: 600;
         background: lighten($card-bg-varient, 4%);
-        color: theme-color(primary);
+        color: $primary;
       }
     }
   }

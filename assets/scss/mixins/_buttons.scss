@@ -33,7 +33,7 @@
     &:not(.btn-inverse-light) {
       color: $color;      
     }
-    @include hover {
+    &:hover {
       color: $color-hover;
       background-color: $color;
       border-color: $color;

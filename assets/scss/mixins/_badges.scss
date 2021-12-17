@@ -3,6 +3,7 @@
 //Badge vriations
 @mixin badge-variations($color) {
 	border: 1px solid $color;
+	background: $color;
 	color: $white;
 }
 // Badge outlined variations

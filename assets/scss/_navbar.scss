@@ -23,7 +23,7 @@
       width: 55px;
     }
     .navbar-brand {
-      color: lighten(color(gray-dark), 20%);
+      color: lighten($gray-dark, 20%);
       font-size: 1.5rem;
       line-height: 48px;
       margin-right: 0;
@@ -33,7 +33,7 @@
       &:active,
       &:focus,
       &:hover {
-        color: lighten(color(gray-dark), 10%);
+        color: lighten($gray-dark, 10%);
       }
 
       img {
@@ -77,6 +77,9 @@
       @include border-radius(0px);
       padding-left: 5px;
       padding-right: 20px;
+      &:focus {
+        box-shadow: none;
+      }
       &:not(.navbar-toggler-right) {
         font-size: 1.5rem;
         @media (max-width: 991px) {
@@ -113,8 +116,8 @@
         }
       }
       .rtl & {
-        @extend .ml-0;
-        @extend .mr-4;
+        @extend .ms-0;
+        @extend .me-4;
       }
     }
 
@@ -170,7 +173,7 @@
         &.dropdown {
           .dropdown-toggle {
             &:after {
-              color: theme-color(primary);
+              color: $primary;
               font-size: 1rem;
             }
           }
@@ -209,7 +212,7 @@
                 }
                 .rtl & {
                   i{
-                    @extend .mr-0;
+                    @extend .me-0;
                     margin-left: 10px;
                   }
                 }
@@ -259,13 +262,13 @@
                 bottom: 5px;
                 right: -5px;
                 &.online {
-                  background: theme-color(success);
+                  background: $success;
                 }
                 &.offline {
-                  background: theme-color(danger);
+                  background: $danger;
                 }
                 &.busy {
-                  background: theme-color(warning);
+                  background: $warning;
                 }
               }
             }

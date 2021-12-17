@@ -30,7 +30,7 @@ dl {
   li {
     &:before {
       content: '\F12D';
-      color: theme-color(danger);
+      color: $danger;
     }
   }
 }
@@ -39,7 +39,7 @@ dl {
   li {
     &:before {
       content: '\F142';
-      color: theme-color(success);
+      color: $success;
     }
   }
 }
@@ -48,7 +48,7 @@ dl {
   li {
     &:before {
       content: '\F4CE';
-      color: theme-color(warning);
+      color: $warning;
     }
   }
 }
@@ -135,7 +135,7 @@ dl {
       height: 12px;
       left: -28px;
       top: 6px;
-      border: 3px solid theme-color(primary);
+      border: 3px solid $primary;
       margin-right: 15px;
       z-index: 2;
       background: $bullet-line-list-shape-bg;
